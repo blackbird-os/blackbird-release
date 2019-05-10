@@ -6,16 +6,15 @@ pkgver=$(date +%Y.%m)
 pkgrel=1
 pkgdesc="Blackbird release definition"
 arch=('any')
-url="N/A"
+url="https://github.com/blackbird-os/blackbird-release"
 license=('GPL')
 depends=('bash')
 conflicts=('manjaro-release')
 install="blackbird-release.install"
-source=("lsb-release")
-md5sums=('SKIP')
 
 package() {
     # Copy files
+    cd ../..
     mkdir -p ${pkgdir}/etc
-    install -m644 ${srcdir}/lsb-release ${pkgdir}/etc/
+    install -m644 lsb-release ${pkgdir}/etc/
 }
