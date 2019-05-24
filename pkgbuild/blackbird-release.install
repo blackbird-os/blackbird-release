@@ -1,22 +1,22 @@
 post_install() {
     sed -e "s|ID=manjaro|ID=blackbird|" \
         -e "s|Manjaro Linux|Blackbird OS|g" \
-        -e "s|https://www.manjaro.org/|http://www.netrunner.com/|g" \
-        -e "s|https://bugs.manjaro.org/|http://forums.netrunner.com/|g" \
-        -e '/ID=netrunner/a\BUILD_ID=2019.04' \
+        -e "s|https://www.manjaro.org/|http://www.blackbird-os.com/|g" \
+        -e "s|https://bugs.manjaro.org/|http://blackbird-os.com/|g" \
+        -e '/ID=blackbird/a\BUILD_ID=2019.06' \
         -i usr/lib/os-release
 }
 
 post_upgrade() {
-    sed -e "s|^BUILD_ID=.*|BUILD_ID=2019.04|" \
+    sed -e "s|^BUILD_ID=.*|BUILD_ID=2019.06|" \
         -i usr/lib/os-release
 }
 
 post_remove() {
     sed -e "s|ID=blackbird|ID=manjaro|" \
         -e "s|Blackbird OS|Manjaro Linux|g" \
-        -e "s|http://www.netrunner.com/|https://www.manjaro.org/|g" \
-        -e "s|http://forums.netrunner.com/|https://bugs.manjaro.org/|g" \
-        -e '/BUILD_ID=2019.04/d' \
+        -e "s|http://www.blackbird-os.com/|https://www.manjaro.org/|g" \
+        -e "s|http://blackbird-os.com/|https://bugs.manjaro.org/|g" \
+        -e '/BUILD_ID=2019.06/d' \
         -i usr/lib/os-release
 }
