@@ -1,22 +1,26 @@
 post_install() {
     sed -e "s|ID=manjaro|ID=blackbird|" \
         -e "s|Manjaro Linux|Blackbird OS|g" \
-        -e "s|https://www.manjaro.org/|http://www.blackbird-os.com/|g" \
-        -e "s|https://bugs.manjaro.org/|http://blackbird-os.com/|g" \
-        -e '/ID=blackbird/a\BUILD_ID=2019.06' \
+        -e "s|https://manjaro.org/|http://www.blackbird-os.com/|g" \
+        -e "s|rolling|2020.06|g" \
+        -e "s|manjarolinux|homerun|g" \
         -i usr/lib/os-release
 }
 
 post_upgrade() {
-    sed -e "s|^BUILD_ID=.*|BUILD_ID=2019.06|" \
+    sed -e "s|ID=manjaro|ID=blackbird|" \
+        -e "s|Manjaro Linux|Blackbird OS|g" \
+        -e "s|https://manjaro.org/|http://www.blackbird-os.com/|g" \
+        -e "s|rolling|2020.06|g" \
+        -e "s|manjarolinux|homerun|g" \
         -i usr/lib/os-release
 }
 
 post_remove() {
     sed -e "s|ID=blackbird|ID=manjaro|" \
         -e "s|Blackbird OS|Manjaro Linux|g" \
-        -e "s|http://www.blackbird-os.com/|https://www.manjaro.org/|g" \
-        -e "s|http://blackbird-os.com/|https://bugs.manjaro.org/|g" \
-        -e '/BUILD_ID=2019.06/d' \
+        -e "s|http://www.blackbird-os.com/|https://manjaro.org/|g" \
+        -e "s|2020.06|rolling|g" \
+        -e "s|homerun|manjarolinux|g" \
         -i usr/lib/os-release
 }
