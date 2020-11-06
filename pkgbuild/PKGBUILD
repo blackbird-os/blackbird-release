@@ -2,8 +2,8 @@
 # Maintainer: James Kittsmiller (AJSlye) <james@nulogicsystems.com>
 
 pkgname=blackbird-release
-pkgver=$(date +%Y.%m)
-pkgrel=1
+pkgver=$(date +2020.06)
+pkgrel=2
 pkgdesc="Blackbird release definition"
 arch=('any')
 url="https://github.com/blackbird-os/blackbird-release"
@@ -13,8 +13,12 @@ conflicts=('manjaro-release')
 install="blackbird-release.install"
 
 package() {
-    # Copy files
+# Copy files
     cd ../..
+    cp -aR usr $pkgdir/
     mkdir -p ${pkgdir}/etc
     install -m644 lsb-release ${pkgdir}/etc/
+#Hook
+    install -Dm644 filesystem-pre.hook $pkgdir/usr/share/libalpm/hooks/filesystem-pre.hook
+    install -Dm644 filesystem-post.hook $pkgdir/usr/share/libalpm/hooks/filesystem-post.hook
 }

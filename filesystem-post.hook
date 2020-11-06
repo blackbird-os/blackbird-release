@@ -1,0 +1,10 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = filesystem
+
+[Action]
+Description = Copy Blackbird os-release Settings
+When = PostTransaction
+Exec = /usr/bin/cp -f /usr/share/default-settings/blackbird-release /usr/lib/os-release

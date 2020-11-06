@@ -1,0 +1,11 @@
+NAME="Blackbird OS"
+ID=blackbird
+ID_LIKE=arch
+BUILD_ID=2020.06
+PRETTY_NAME="Blackbird OS"
+ANSI_COLOR="32;1;24;144;200"
+HOME_URL="http://www.blackbird-os.com/"
+DOCUMENTATION_URL="https://wiki.manjaro.org/"
+SUPPORT_URL="http://www.blackbird-os.com/"
+BUG_REPORT_URL="https://bugs.manjaro.org/"
+LOGO=homerun
