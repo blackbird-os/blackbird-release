@@ -2,7 +2,7 @@
 # Maintainer: James Kittsmiller (AJSlye) <james@nulogicsystems.com>
 
 pkgname=blackbird-release
-pkgver=$(date +2020.06)
+pkgver=$(date +%Y.%m)
 pkgrel=2
 pkgdesc="Blackbird release definition"
 arch=('any')
