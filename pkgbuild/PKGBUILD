@@ -3,14 +3,14 @@
 
 pkgname=blackbird-release
 pkgver=$(date +%Y.%m)
-pkgrel=2
+pkgrel=1
 pkgdesc="Blackbird release definition"
 arch=('any')
 url="https://github.com/blackbird-os/blackbird-release"
 license=('GPL')
 depends=('bash')
 conflicts=('manjaro-release')
-install="blackbird-release.install"
+#install="blackbird-release.install"
 
 package() {
 # Copy files

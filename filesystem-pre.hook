@@ -2,9 +2,9 @@
 Type = Package
 Operation = Install
 Operation = Upgrade
-Target = firefox
+Target = filesystem
 
 [Action]
-Description = Remove Firefox Distribution Settings
+Description = Remove os-release Settings
 When = PreTransaction
 Exec = /usr/bin/rm -f /usr/lib/os-release
