@@ -2,7 +2,7 @@ post_install() {
     sed -e "s|ID=manjaro|ID=blackbird|" \
         -e "s|Manjaro Linux|Blackbird OS|g" \
         -e "s|https://manjaro.org/|http://www.blackbird-os.com/|g" \
-        -e "s|rolling|2020.06|g" \
+        -e "s|rolling|2021.10|g" \
         -e "s|manjarolinux|homerun|g" \
         -i usr/lib/os-release
 }
@@ -11,7 +11,7 @@ post_upgrade() {
     sed -e "s|ID=manjaro|ID=blackbird|" \
         -e "s|Manjaro Linux|Blackbird OS|g" \
         -e "s|https://manjaro.org/|http://www.blackbird-os.com/|g" \
-        -e "s|rolling|2020.06|g" \
+        -e "s|rolling|2021.10|g" \
         -e "s|manjarolinux|homerun|g" \
         -i usr/lib/os-release
 }
@@ -20,7 +20,7 @@ post_remove() {
     sed -e "s|ID=blackbird|ID=manjaro|" \
         -e "s|Blackbird OS|Manjaro Linux|g" \
         -e "s|http://www.blackbird-os.com/|https://manjaro.org/|g" \
-        -e "s|2020.06|rolling|g" \
+        -e "s|2021.10|rolling|g" \
         -e "s|homerun|manjarolinux|g" \
         -i usr/lib/os-release
 }
